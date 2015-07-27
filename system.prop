@@ -1,0 +1,9 @@
+# system.prop for matissewifi
+
+# RIL
+ro.carrier=wifi-only
+ro.radio.noril=yes
+
+# Device ID
+ro.product.device=matissewifi
+ro.product.model=matissewifi
