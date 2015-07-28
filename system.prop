@@ -2,8 +2,8 @@
 
 # RIL
 ro.carrier=wifi-only
-ro.radio.noril=yes
+ro.radio.noril=1
 
 # Device ID
 ro.product.device=matissewifi
-ro.product.model=matissewifi
+ro.product.model=SM-T530
