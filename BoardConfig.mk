@@ -29,6 +29,9 @@ include device/samsung/matisse-common/BoardConfigCommon.mk
 # Assert
 TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifixx,530,SM-T530
 
+# Board
+TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
+
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 
