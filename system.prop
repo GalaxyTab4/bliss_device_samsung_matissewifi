@@ -3,6 +3,7 @@
 # RIL
 ro.carrier=wifi-only
 ro.radio.noril=1
+mobiledata.interfaces=wlan0
 
 # Device ID
 ro.product.device=matissewifi

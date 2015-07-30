@@ -536,7 +536,6 @@ on boot
     chmod 0664 /sys/class/input/input2/enabled
 
     # Permission for touchkey
-    chown root system /sys/class/sec/sec_touchkey/tsp_keys_enabled
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
     chown system system /sys/class/sec/sec_touchkey/touchkey_brightness
     chown system system /sys/class/sec/sec_touchkey/touchkey_menu
@@ -580,6 +579,8 @@ service audiod /system/bin/audiod
 
 service charger /charger
     class charger
+    critical
+    seclabel u:r:healthd:s0
 
 service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
     class late_start
@@ -846,7 +847,7 @@ on property:sys.boot_completed=1
     start mpdecision
 
 on property:init.svc.bootanim=stopped
-    write /sys/block/mmcblk0/queue/scheduler row
+    write /sys/block/mmcblk0/queue/scheduler fiops
 
     # Configure interactive governor
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
@@ -861,7 +862,7 @@ on property:init.svc.bootanim=stopped
     write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 100000
 
     # Configure CPU boost
-    # write /sys/module/cpu_boost/parameters/boost_ms 20
+    write /sys/module/cpu_boost/parameters/boost_ms 20
     write /sys/module/cpu_boost/parameters/sync_threshold 600000
     write /sys/module/cpu_boost/parameters/input_boost_freq 998400
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
