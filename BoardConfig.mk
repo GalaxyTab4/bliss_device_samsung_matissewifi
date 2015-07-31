@@ -35,3 +35,6 @@ TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
 #TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
+
