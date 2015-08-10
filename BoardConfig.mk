@@ -38,3 +38,5 @@ TARGET_KERNEL_CONFIG := matissewifi_defconfig
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
+# IR
+TARGET_PROVIDES_CONSUMERIR_HAL := true

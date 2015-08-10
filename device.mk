@@ -32,6 +32,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# IR
+PRODUCT_PACKAGES += consumerir.msm8226
+
 # Inherit from matisse-common
 $(call inherit-product, device/samsung/matisse-common/matisse-common.mk)
 
