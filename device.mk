@@ -20,18 +20,6 @@ $(call inherit-product-if-exists, vendor/samsung/matissewifi/matissewifi-vendor.
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/matissewifi/overlay
 
-# Ramdisk
-PRODUCT_PACKAGES += \
-    init.crda.sh \
-    init.qcom.bt.sh
-
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.target.rc \
-    ueventd.qcom.rc
-
 # IR
 PRODUCT_PACKAGES += consumerir.msm8226
 
