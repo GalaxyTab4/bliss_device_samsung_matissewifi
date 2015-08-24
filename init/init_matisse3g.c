@@ -62,12 +62,12 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "s3ve3g");
         property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
         gsm_properties();
-    } else if (strstr(bootloader, "I9301Q")) {
-        /* s3ve3gjv */
-        property_set("ro.build.fingerprint", "samsung/s3ve3gjv/s3ve3g:4.4.2/KOT49H/I9301QXXUANH1:user/release-keys");
-        property_set("ro.build.description", "s3ve3gjv-user 4.4.2 KOT49H I9301QXXUANH1 release-keys");
-        property_set("ro.product.model", "GT-I9301Q");
-        property_set("ro.product.device", "s3ve3gjv");
+    } else if (strstr(bootloader, "T531")) {
+        /* matisse3g */
+        property_set("ro.build.fingerprint", "samsung/matisse3g/matisse3g:4.4.2/KOT49H/T531QXXUANH1:user/release-keys");
+        property_set("ro.build.description", "matisse3g-user 4.4.2 KOT49H T531QXXUANH1 release-keys");
+        property_set("ro.product.model", "SM-T531");
+        property_set("ro.product.device", "matisse3g");
         property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
         gsm_properties();
     } else if (strstr(bootloader, "I9300I")) {
