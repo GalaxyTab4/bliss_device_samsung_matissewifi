@@ -326,4 +326,7 @@ vendor/lib/libmmwfdsrcinterface.so
 # extra blobs
 extra/bin/sshfs:bin/sshfs
 
+# consumerir
+lib/hw/consumerir.default.so
+etc/permissions/android.hardware.consumerir.xml
 

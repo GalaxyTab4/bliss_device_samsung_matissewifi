@@ -27,7 +27,7 @@ include device/samsung/matisse-common/BoardConfigCommon.mk
 -include vendor/samsung/matissewifi/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifixx,530,SM-T530
+TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifiue,matissewifixx,530,SM-T530
 
 # Board
 TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
@@ -38,5 +38,3 @@ TARGET_KERNEL_CONFIG := matissewifi_defconfig
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
-# IR
-TARGET_PROVIDES_CONSUMERIR_HAL := true

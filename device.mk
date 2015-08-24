@@ -20,9 +20,6 @@ $(call inherit-product-if-exists, vendor/samsung/matissewifi/matissewifi-vendor.
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/matissewifi/overlay
 
-# IR
-PRODUCT_PACKAGES += consumerir.msm8226
-
 # Inherit from matisse-common
 $(call inherit-product, device/samsung/matisse-common/matisse-common.mk)
 
