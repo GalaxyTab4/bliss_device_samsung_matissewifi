@@ -1,2 +1,2 @@
-add_lunch_combo cm_matisse3g-eng
-add_lunch_combo cm_matisse3g-userdebug
+add_lunch_combo cm_matissewifi-eng
+add_lunch_combo cm_matissewifi-userdebug

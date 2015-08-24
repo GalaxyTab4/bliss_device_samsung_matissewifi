@@ -13,11 +13,11 @@
 # limitations under the License.
 
 # Inherit some common Bliss stuff.
-$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+$(call inherit-product, vendor/bliss/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/matisse3g/full_matisse3g.mk)
+$(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := SM-T531
-PRODUCT_NAME := bliss_matisse3g
+PRODUCT_RELEASE_NAME := SM-T530
+PRODUCT_NAME := bliss_matissewifi

@@ -1,2 +1,2 @@
-Device Tree For Samsung Galaxy Tab 4 3G
-=======================================
+Device Tree For Samsung Galaxy Tab 4 WIFI
+=========================================

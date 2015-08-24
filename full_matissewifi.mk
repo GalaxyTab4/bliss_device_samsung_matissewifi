@@ -13,14 +13,14 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Inherit from matisse3g device
-$(call inherit-product, device/samsung/matisse3g/device.mk)
+# Inherit from matissewifi device
+$(call inherit-product, device/samsung/matissewifi/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := matisse3g
-PRODUCT_NAME := full_matisse3g
+PRODUCT_DEVICE := matissewifi
+PRODUCT_NAME := full_matissewifi
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-T531
+PRODUCT_MODEL := SM-T530
 PRODUCT_MANUFACTURER := samsung

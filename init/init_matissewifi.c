@@ -62,14 +62,15 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "s3ve3g");
         property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
         gsm_properties();
-    } else if (strstr(bootloader, "T531")) {
-        /* matisse3g */
-        property_set("ro.build.fingerprint", "samsung/matisse3g/matisse3g:4.4.2/KOT49H/T531QXXUANH1:user/release-keys");
-        property_set("ro.build.description", "matisse3g-user 4.4.2 KOT49H T531QXXUANH1 release-keys");
-        property_set("ro.product.model", "SM-T531");
-        property_set("ro.product.device", "matisse3g");
-        property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
-        gsm_properties();
+    } else if (strstr(bootloader, "T530")) {
+        /* matissewifi */
+        property_set("ro.build.fingerprint", "samsung/matissewifi/matissewifi:4.4.2/KOT49H/T530QXXUANH1:user/release-keys");
+        property_set("ro.build.description", "matissewifi-user 4.4.2 KOT49H T530QXXUANH1 release-keys");
+        property_set("ro.product.model", "SM-T530");
+        property_set("ro.product.device", "matissewifi");
+        property_set("ro.carrier", "wifi-only");
+        property_set("ro.radio.noril", "1");
+        property_set("mobiledata.interfaces", "wlan0");
     } else if (strstr(bootloader, "I9300I")) {
         /* s3ve3gds */
         property_set("ro.build.fingerprint", "samsung/s3ve3gdsxx/s3ve3gds:4.4.4/KTU84P/I9300IXWUBNJ1:user/release-keys");
