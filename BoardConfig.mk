@@ -22,6 +22,13 @@ TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
 
 LOCAL_PATH := device/samsung/matissewifi
 
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+  endif
+endif
+
 # ART
 ART_USE_HSPACE_COMPACT := true
 
