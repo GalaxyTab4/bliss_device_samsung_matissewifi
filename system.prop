@@ -1,4 +1,6 @@
 # System.prop for matissewifi
+ro.product.device=matissewifi
+ro.product.model=SM-T530
 
 # RIL
 rild.libpath=/system/lib/libsec-ril.so
