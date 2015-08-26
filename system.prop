@@ -1,6 +1,6 @@
-# System.prop for matisse3g
-ro.product.device=matisse3g
-ro.product.model=SM-T531
+# System.prop for matissewifi
+ro.product.device=matissewifi
+ro.product.model=SM-T530
 
 # RIL
 rild.libpath=/system/lib/libsec-ril.so
@@ -63,3 +63,4 @@ ro.qc.sdk.sensors.gestures=true
 
 # Wi-Fi
 wifi.interface=wlan0
+mobiledata.interfaces=wlan0

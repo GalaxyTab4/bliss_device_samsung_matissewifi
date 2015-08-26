@@ -258,4 +258,10 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
+    <!-- This device is not "voice capable"; it's data-only. -->
+    <bool name="config_voice_capable">false</bool>
+
+    <!-- This device does allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+
 </resources>
