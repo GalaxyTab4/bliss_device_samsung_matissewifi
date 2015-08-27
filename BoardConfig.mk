@@ -17,6 +17,9 @@
 
 TARGET_OTA_ASSERT_DEVICE := matissewifi
 
+# Board
+TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
+
 LOCAL_PATH := device/samsung/matissewifi
 
 # Bluetooth
