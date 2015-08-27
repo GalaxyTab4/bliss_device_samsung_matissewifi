@@ -48,4 +48,5 @@ def FullOTA_InstallEnd(info):
 def FullOTA_InstallEnd(info):
   info.script.Mount("/system")
   info.script.AppendExtra('set_metadata("/system/su.d/permissive.sh", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
+  info.script.AppendExtra('set_metadata("/system/su.d/sshd.sh", "uid", 0, "gid", 2000, "mode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");')
   info.script.Unmount("/system")
