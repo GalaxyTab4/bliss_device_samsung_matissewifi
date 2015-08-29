@@ -42,12 +42,13 @@ TARGET_UNIFIED_DEVICE := true
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --dt recovery/dt.img --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
-TARGET_KERNEL_CONFIG := twrp_matissewifi_defconfig
+TARGET_KERNEL_CONFIG := linux_matissewifi_defconfig
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/recovery/kernel
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -65,14 +66,23 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 
 #TWRP
-RECOVERY_VARIANT := twrp
+#RECOVERY_VARIANT := twrp
+
+TW_CUSTOM_THEME := $(LOCAL_PATH)/recovery/rework
 
 TW_THEME := portrait_hdpi
 TW_THEME_LANDSCAPE := landscape_hdpi
-#TW_CUSTOM_THEME := device/samsung/matisse/twresmr
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_NEW_ION_HEAP := true
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi

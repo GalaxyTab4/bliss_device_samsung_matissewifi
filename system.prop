@@ -1,6 +1,7 @@
 # System.prop for matissewifi
 ro.product.device=matissewifi
 ro.product.model=SM-T530
+ro.adb.secure=0
 
 # Audio and Media
 audio.offload.buffer.size.kb=32

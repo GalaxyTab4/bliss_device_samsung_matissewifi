@@ -18,6 +18,15 @@ $(call inherit-product, vendor/bliss/config/common_full_tablet_wifionly.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := $(LOCAL_PATH)/recovery/kernel
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += device/samsung/matissewifi/recovery/kernel:kernel 
+PRODUCT_COPY_FILES += device/samsung/matissewifi/recovery/dt.img:dt.img 
+
 # Release name
 PRODUCT_RELEASE_NAME := SM-T530
 PRODUCT_NAME := bliss_matissewifi
