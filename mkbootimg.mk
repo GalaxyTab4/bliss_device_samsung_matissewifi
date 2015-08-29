@@ -7,7 +7,6 @@ LOCAL_PATH := $(call my-dir)
 ## Imported from the original makefile...
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
 MSM8226_DTS_NAMES := msm8226
-
 MSM8226_DTS_FILES = $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8226-sec-matissewifi*.dts)
 MSM8226_DTS_FILE = $(lastword $(subst /, ,$(1)))
 DTB_FILE = $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%.dtb,$(call MSM8226_DTS_FILE,$(1))))
@@ -22,7 +21,6 @@ $(foreach MSM8226_DTS_NAME, $(MSM8226_DTS_NAMES), \
       $(DTC) -p 1024 -O dtb -o $(call DTB_FILE,$(d)) $(d); \
       cat $(KERNEL_ZIMG) $(call DTB_FILE,$(d)) > $(call ZIMG_FILE,$(d));))
 endef
-
 
 ## Build and run dtbtool
 DTBTOOL := $(HOST_OUT_EXECUTABLES)/dtbToolCM$(HOST_EXECUTABLE_SUFFIX)
@@ -43,11 +41,22 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTAL
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
-## Overload recoveryimg generation: Same as the original, + --dt arg
+
+#	$(hide) cp $(recovery_uncompressed_ramdisk) $(PRODUCT_OUT)/root/sbin/
+
+
+## Overload bootimg generation: Same as the original, + --dt arg + lzma
+LZMA_RAMDISK := $(PRODUCT_OUT)/ramdisk-recovery-lzma.img
+
+$(LZMA_RAMDISK): $(recovery_ramdisk)
+	gunzip -f < $(recovery_ramdisk) | lzma -e > $@
+
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
-		$(recovery_ramdisk) \
+		$(LZMA_RAMDISK) \
 		$(recovery_kernel)
 	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
-	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@
+	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@ --ramdisk $(LZMA_RAMDISK)
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
+	@echo $(TW_VERSION_STR)
+
