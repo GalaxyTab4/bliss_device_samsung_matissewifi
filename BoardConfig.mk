@@ -29,6 +29,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Adreno
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
+
 # ART
 ART_USE_HSPACE_COMPACT := true
 
