@@ -24,8 +24,8 @@ LOCAL_PATH := device/samsung/matissewifi
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
+  ifeq ($(WITH_DEXPREOPT_BOOT_IMG_ONLY),)
+	WITH_DEXPREOPT_BOOT_IMG_ONLY := true
   endif
 endif
 
