@@ -1,32 +1,19 @@
-# Copyright (C) 2014 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Release name
+PRODUCT_RELEASE_NAME := SM-T530
 
 # Inherit some common Bliss stuff.
 $(call inherit-product, vendor/bliss/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
+$(call inherit-product, device/samsung/matissewifi/device_matissewifi.mk)
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/recovery/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += device/samsung/matissewifi/recovery/kernel:kernel 
-PRODUCT_COPY_FILES += device/samsung/matissewifi/recovery/dt.img:dt.img 
-
-# Release name
-PRODUCT_RELEASE_NAME := SM-T530
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := matissewifi
 PRODUCT_NAME := bliss_matissewifi
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-T530
+PRODUCT_MANUFACTURER := samsung
+
+# Set build fingerprint / ID / Product Name ect.
+#PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m0xx TARGET_DEVICE=m0 BUILD_FINGERPRINT="samsung/m0xx/m0:4.1.1/JRO03C/I9300XXDLIB:user/release-keys" PRIVATE_BUILD_DESC="m0xx-user 4.1.1 JRO03C I9300XXDLIB release-keys"
+

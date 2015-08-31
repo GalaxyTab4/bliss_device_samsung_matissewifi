@@ -1,5 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
+INSTALLED_DTIMAGE_TARGET := /roms/bliss/device/samsung/matissewifi/dt.img
+
 ## Overload bootimg generation: Same as the original, + --dt arg
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTALLED_DTIMAGE_TARGET)
 	$(call pretty,"Target boot image: $@")
