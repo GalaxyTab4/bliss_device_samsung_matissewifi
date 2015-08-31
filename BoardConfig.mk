@@ -47,7 +47,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --dt recovery/dt.img --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
-TARGET_KERNEL_CONFIG := linux_matissewifi_defconfig
+TARGET_KERNEL_CONFIG := twrp_matissewifi_defconfig
 #TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/recovery/kernel
 
 # Lights
@@ -69,7 +69,7 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 
 #TWRP
-#RECOVERY_VARIANT := twrp
+RECOVERY_VARIANT := twrp
 
 TW_CUSTOM_THEME := $(LOCAL_PATH)/recovery/rework
 
@@ -81,7 +81,7 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_NEW_ION_HEAP := true
+#TW_NEW_ION_HEAP := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Releasetools
@@ -99,7 +99,7 @@ BLISS_STRICT := true
 BLISS_KRAIT := true
 BLISS_PIPE := true
 TARGET_TC_ROM := 5.1-linaro
-TARGET_TC_KERNEL := 4.9-sm
+TARGET_TC_KERNEL := 5.1-sm
 TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
 WITH_LZMA_OTA := true
