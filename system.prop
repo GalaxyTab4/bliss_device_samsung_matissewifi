@@ -47,6 +47,4 @@ wifi.interface=wlan0
 #mobiledata.interfaces=wlan0
 
 # OTA Updates
-ro.ota.romname=BOSP-matissewifi
-ro.ota.version=20150827
 ro.ota.manifest=http://android.comtek-wiebe.de/BlissPop/sm-t530/ota/ota3.xml
