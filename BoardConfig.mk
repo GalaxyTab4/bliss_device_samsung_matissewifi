@@ -96,8 +96,8 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # Vold 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
-BOARD_UMS_LUNFILE 				:= "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+BOARD_UMS_LUNFILE 				:= /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
@@ -119,7 +119,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
-TW_NO_REBOOT_RECOVERY := true
+#TW_NO_REBOOT_RECOVERY := true
 #TW_NEW_ION_HEAP := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TW_TARGET_USES_QCOM_BSP := true

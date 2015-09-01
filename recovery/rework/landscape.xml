@@ -2377,17 +2377,15 @@
 
 			<object type="button" style="main_button_half_width">
 				<condition var1="tw_mount_system_ro" op="=" var2="0" />
-				<placement x="%col1_x_right%" y="%row15a_y%" />
-				<font resource="font" color="%text_color%" />
-
-				<text>Only mount system read-only</text>
+				<placement x="%col2_x_left%" y="%row15a_y%" />
+				<text>mount system read-only</text>
 				<action function="mountsystemtoggle">1</action>
 			</object>
 
 			<object type="button" style="main_button_half_width">
 				<condition var1="tw_mount_system_ro" op="!=" var2="0" />
-				<placement x="%col1_x_right%" y="%row15a_y%" />
-				<text>Only mount system read-only</text>
+				<placement x="%col2_x_left%" y="%row15a_y%" />
+				<text>mount system read/write</text>
 				<actions>
 					<action function="set">tw_lifetime_writes=2</action>
 					<action function="page">system_readonly_check</action>
@@ -4201,7 +4199,7 @@
 		</page>
 
 		<page name="system_readonly">
-			<object type="template" name="header" />
+			<object type="template" name="page" />
 
 			<object type="text">
 				<placement x="%center_x%" y="%row1_text_y%" placement="5" />
