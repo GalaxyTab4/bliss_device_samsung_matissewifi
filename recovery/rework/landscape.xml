@@ -4201,22 +4201,26 @@
 		<page name="system_readonly">
 			<object type="template" name="page" />
 
-			<object type="text">
+			<object type="fill" color="%background_color%">
+				<placement x="0" y="0" w="%screen_width%" h="%screen_height%" />
+			</object>
+
+			<object type="text" style="text_m">
 				<placement x="%col1_x_left%" y="%row1_y%" />
 				<text>Keep System Read Only?</text>
 			</object>
 
-			<object type="text">
+			<object type="text" style="text_m">
 				<placement x="%col1_x_left%" y="%row2_y%" />
 				<text>TWRP can leave your system partition unmodified to make it easier for you to take official updates.</text>
 			</object>
 
-			<object type="text">
+			<object type="text" style="text_m">
 				<placement x="%col1_x_left%" y="%row3_y%" />
 				<text>TWRP will be unable to prevent the stock ROM from replacing TWRP and will not offer to root your device.</text>
 			</object>
 
-			<object type="text">
+			<object type="text" style="text_m">
 				<placement x="%col1_x_left%" y="%row4_y%" />
 				<text>Installing zips or performing adb operations may still modify the system partition.</text>
 			</object>
@@ -4240,12 +4244,14 @@
 
 			<object type="slider">
 				<text>Swipe to Allow Modifications</text>
+				<fill color="%transparent%" />
 				<actions>
 					<action function="mountsystemtoggle">0</action>
 					<action function="set">tw_page_done=1</action>
 					<action function="page">%tw_back%</action>
 				</actions>
 			</object>
+
 		</page>
 	</pages>
 </recovery>
