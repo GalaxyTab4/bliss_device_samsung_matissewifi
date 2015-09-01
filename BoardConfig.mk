@@ -4,7 +4,7 @@ USE_CAMERA_STUB := true
 # Inherit from msm8226-common
 #-include device/samsung/qcom-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := matissewifi
+TARGET_OTA_ASSERT_DEVICE := matissewifi matissewifiue matisse3g matisselte
 
 BOARD_VENDOR := samsung
 
@@ -48,9 +48,9 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
 BOARD_USES_QCOM_HARDWARE := true
 
 # Init
-#TARGET_INIT_VENDOR_LIB := libinit_msm
-#TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matissewifi.c
-#TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matissewifi.c
+TARGET_UNIFIED_DEVICE := true
 
 #TARGET_PROVIDES_INIT := true
 #TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -59,7 +59,7 @@ BOARD_USES_QCOM_HARDWARE := true
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_KERNEL_SEPARATED_DT := true
@@ -124,7 +124,7 @@ TW_NEW_ION_HEAP := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TW_TARGET_USES_QCOM_BSP := true
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+#TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 TARGET_RECOVERY_DEVICE_DIRS += device/samsung/matissewifi
 
