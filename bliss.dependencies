@@ -19,8 +19,8 @@
     },
     {
         "remote": "github",
-        "repository": "GalaxyTab4/bliss_vendor_samsung_matisse3g",
-        "target_path": "vendor/samsung/matisse3g",
+        "repository": "GalaxyTab4/bliss_vendor_samsung_matissewifi",
+        "target_path": "vendor/samsung/matissewifi",
         "revision": "lp5.1"
     }
 ]
