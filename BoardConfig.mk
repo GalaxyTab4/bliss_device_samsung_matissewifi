@@ -60,9 +60,6 @@ TARGET_NO_RPC := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# NFC
-#BOARD_NFC_HAL_SUFFIX := msm8226
-
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
@@ -77,22 +74,21 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_UNION += macloader.te
 BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
 
 # Wifi
+# Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
-BOARD_WLAN_DEVICE := qcwcn
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_FW_PATH_STA := "sta"
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME          := "wlan"
+TARGET_USES_QCOM_WCNSS_QMI := true
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME := "wlan"
+BOARD_WLAN_DEVICE := qcwcn
 
 WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/pronto
@@ -120,7 +116,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_RIL_CLASS := ../../../device/samsung/matissewifi/ril
 
 # Bootanimation
-TARGET_BOOTANIMATION_SIZE := 2560x1440
+TARGET_BOOTANIMATION_SIZE := 1280x800
 
 # TWRP specific build flags
 TW_THEME := landscape_hdpi
@@ -128,17 +124,6 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-#TW_BRIGHTNESS_PATH := /sys/devices/qcom,mdss_dsi_samsung_octa_1080p_cmd.71/lcd/panel/panel/brightness
-#TW_MAX_BRIGHTNESS := 255
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_SAMSUNG := true
-#TW_CRYPTO_FS_TYPE := "ext4"
-#TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p26"
-#TW_CRYPTO_MNT_POINT := "/data"
-#TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic"
-#TW_CRYPTO_FS_FLAGS := "0x00000406"
-#TW_CRYPTO_KEY_LOC := "footer"
-TW_NO_SCREEN_TIMEOUT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
