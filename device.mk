@@ -159,7 +159,9 @@ RODUCT_PROPERTY_OVERRIDES += \
 
 # SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=0 \
+    ro.build.selinux=0 
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.adb.secure=0 \
 	ro.secure=0
 
