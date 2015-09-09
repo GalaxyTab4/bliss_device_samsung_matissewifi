@@ -5,8 +5,7 @@ on early-init
 on boot
     write /sys/devices/platform/android_usb/usb_function_switch 130
 
-    start sshd
-    start dropbear
+    start enable_sshd
 
 on property:sys.usb.config=adb
     write /sys/class/android_usb/android0/f_ffs/on 1
@@ -18,11 +17,11 @@ on property:sys.usb.config=mtp,adb
     write /sys/devices/platform/android_usb/usb_function_switch 130
     setprop sys.usb.state ${sys.usb.config}
 
-service sshd /sbin/enable_sshd
+service enable_sshd /sbin/enable_sshd
     disabled
-    seclabel u:r:healthd:s0
+    seclabel u:r:recovery:s0
 
-service dropbear /sbin/startsshd
-    oneshot
+service disable_sshd /sbin/disable_sshd
+    disabled
     seclabel u:r:recovery:s0
 
