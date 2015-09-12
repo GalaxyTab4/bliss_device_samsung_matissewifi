@@ -46,5 +46,4 @@ ro.qc.sdk.sensors.gestures=true
 wifi.interface=wlan0
 #mobiledata.interfaces=wlan0
 
-# OTA Updates
-ro.ota.manifest=http://android.comtek-wiebe.de/BlissPop/sm-t530/ota/ota4.xml
+
