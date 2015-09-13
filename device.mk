@@ -151,6 +151,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     kernel/samsung/s3ve3g/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/samsung/s3ve3g/drivers/staging/prima/firmware_bin/:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     kernel/samsung/s3ve3g/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 
