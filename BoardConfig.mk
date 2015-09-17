@@ -89,7 +89,7 @@ TARGET_TC_ROM := 5.1-linaro
 TARGET_TC_KERNEL := 5.1-sm
 TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
-WITH_LZMA_OTA := true
+WITH_LZMA_OTA := false
 
 #SaberMod
 -include vendor/bliss/config/sm.mk
